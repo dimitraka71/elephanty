@@ -1,0 +1,5 @@
+.idea
+target
+docs/design/*.html
+*.DS_Store
+
