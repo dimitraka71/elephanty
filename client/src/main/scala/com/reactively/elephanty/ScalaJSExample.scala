@@ -1,11 +1,21 @@
 package com.reactively.elephanty
 
-import com.reactively.elephanty.shared.SharedMessages
 import org.scalajs.dom
+import org.scalajs.dom.raw.{ HTMLButtonElement, _ }
 
-object ScalaJSExample {
+import scala.scalajs.js
 
-  def main(args: Array[String]): Unit = {
-    dom.document.getElementById("scalajsShoutOut").textContent = SharedMessages.itWorks
+object ScalaJSExample extends js.JSApp {
+  val joinButton = dom.document.getElementById("join").asInstanceOf[HTMLButtonElement]
+  val sendButton = dom.document.getElementById("send").asInstanceOf[HTMLButtonElement]
+
+  def main(): Unit = {
+    val nameField = dom.document.getElementById("name").asInstanceOf[HTMLInputElement]
+    joinButton.onclick = { (onEvent: MouseEvent) =>
+      joinButton.disabled = true
+      val playground = dom.document.getElementById("scalajsShoutOut")
+      playground.innerHTML = s"Trying to join chat as '${nameField.value}'..."
+      onEvent.preventDefault()
+    }
   }
 }

@@ -12,7 +12,6 @@ lazy val server = (project in file("server"))
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-http" % "10.1.1",
       "com.typesafe.akka" %% "akka-stream" % "2.5.11"
-      //    "com.vmunier" %% "scalajs-scripts" % "1.1.2"
     ),
     resourceGenerators in Compile += Def.task {
       val f1 = (fastOptJS in Compile in client).value

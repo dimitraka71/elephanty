@@ -1,25 +1,16 @@
 package com.reactively.elephanty
 
+import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives
-//import com.reactively.elephanty.shared.SharedMessages
 
 class WebService() extends Directives {
 
-  val route = {
-    pathSingleSlash {
-      get {
-        getFromResource("web/index2.html")
-        //        complete {
-        //          com.reactively.elephanty.html.index.render(SharedMessages.itWorks)
-        //        }
+  val route =
+    get {
+      (pathEndOrSingleSlash & redirectToTrailingSlashIfMissing(StatusCodes.TemporaryRedirect)) {
+        getFromResource("web/index.html")
+      } ~ {
+        getFromResourceDirectory("web")
       }
-    } ~
-      pathPrefix("assets" / Remaining) { file =>
-        // optionally compresses the response with Gzip or Deflate
-        // if the client accepts compressed responses
-        encodeResponse {
-          getFromResource("public/" + file)
-        }
-      }
-  }
+    }
 }
