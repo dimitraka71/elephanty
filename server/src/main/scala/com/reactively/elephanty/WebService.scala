@@ -1,17 +1,17 @@
 package com.reactively.elephanty
 
 import akka.http.scaladsl.server.Directives
-import com.reactively.elephanty.shared.SharedMessages
-import com.reactively.elephanty.twirl.Implicits._
+//import com.reactively.elephanty.shared.SharedMessages
 
 class WebService() extends Directives {
 
   val route = {
     pathSingleSlash {
       get {
-        complete {
-          com.reactively.elephanty.html.index.render(SharedMessages.itWorks)
-        }
+        getFromResource("web/index2.html")
+        //        complete {
+        //          com.reactively.elephanty.html.index.render(SharedMessages.itWorks)
+        //        }
       }
     } ~
       pathPrefix("assets" / Remaining) { file =>
