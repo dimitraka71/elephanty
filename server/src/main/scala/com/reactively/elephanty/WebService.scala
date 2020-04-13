@@ -1,6 +1,6 @@
 package com.reactively.elephanty
 
-import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
+import akka.http.scaladsl.model.{ ContentTypes, HttpEntity }
 import akka.http.scaladsl.server.Directives
 
 class WebService() extends Directives {
