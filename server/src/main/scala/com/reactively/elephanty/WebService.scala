@@ -12,7 +12,7 @@ class WebService() extends Directives {
           getFromResource("web/index.html")
         }
       } ~
-      path("submit") {
+      path("multi-form-submit") {
         post {
           formFieldMap { fields =>
             complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, s"<h1>Say hello to for email: ${fields.toString()} </h1>"))

@@ -345,7 +345,8 @@
                             <h4>All form elements</h4>
                         </div>
                         <div class="card-body">
-                            <form class="form-horizontal" action="submit" method="POST">
+<!--                            onsubmit="target_popup(this)"-->
+                            <form class="form-horizontal" action="multi-form-submit" method="POST">
                                 <div class="form-group row">
                                     <label class="col-sm-2 form-control-label">Normal</label>
                                     <div class="col-sm-10">
@@ -656,7 +657,32 @@
                                 <div class="form-group row">
                                     <div class="col-sm-4 offset-sm-2">
                                         <button type="submit" class="btn btn-secondary">Cancel</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">Save changes</button>
+<!--                                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">-->
+                                        <!-- Modal-->
+                                        <div id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+                                             aria-hidden="true" class="modal fade text-left">
+                                            <div role="document" class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 id="exampleModalLabel2" class="modal-title">Form Confirmation</h5>
+                                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                                                            <span aria-hidden="true">×</span></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <label>Your submitted data</label>
+                                                        <label>$(this)</label>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Close
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Modal-->
                                     </div>
                                 </div>
                             </form>
@@ -685,6 +711,7 @@
 
 <!--script for voice-recording-->
 <script src="js/speech-input.js"></script>
+<script src="js/pop-up.js"></script>
 
 <!--scripts from template-->
 <script src="vendor/jquery/jquery.min.js"></script>
