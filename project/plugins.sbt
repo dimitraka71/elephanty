@@ -1,9 +1,6 @@
-addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
-
-addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")
-
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.27")
-
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.9")
-
+addSbtPlugin("org.scalameta"      % "sbt-scalafmt"             % "2.4.2")
+addSbtPlugin("org.scalariform"    % "sbt-scalariform"          % "1.8.2")
+addSbtPlugin("io.spray"           % "sbt-revolver"             % "0.9.1")
+addSbtPlugin("org.scala-js"       % "sbt-scalajs"              % "0.6.27")
+addSbtPlugin("com.eed3si9n"       % "sbt-assembly"             % "0.14.9")
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "0.5.0")
